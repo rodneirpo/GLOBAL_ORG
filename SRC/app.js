@@ -5,6 +5,7 @@ const app = express();
 
 // ==> Rotas da API:
 const index = require('./routes/index');
+const cadastroVoluntarios = require('./routes/cadastroVoluntario.routes');
 
 // const productRoute = require('./routes/product.routes');
 
@@ -14,6 +15,7 @@ app.use(express.json({ type: 'application/vnd.api+json' }));
 app.use(cors());
 
 app.use(index);
+app.use('/api/',cadastroVoluntarios);
 // app.use('/api/', productRoute);
 
 module.exports = app;
